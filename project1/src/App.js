@@ -1,13 +1,13 @@
-import './App.css';
+import "./sass/App.scss"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-    
         <p>
-          Edit 
+          Edit and save to reload.
         </p>
+       
       </header>
     </div>
   );
