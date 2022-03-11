@@ -1,5 +1,37 @@
+$primary-color: blue;
+$secondary-color: red;
+
+
+
+
 *{
     margin: 0;
     box-sizing: 0;
     padding: 0;
+}
+
+@mixin transition-ease {
+    transition: 0.3s ease all;
+    
+}
+
+@mixin media-md {
+    @media screen and(min-width: 768px) {
+        @content;
+    }
+    
+}
+
+@mixin media-lg {
+    @media screen and(min-width: 1024px) {
+        @content;
+    }
+    
+}
+
+
+@mixin media-xl {
+    @media screen and(min-width: 1600px) {
+        @content;
+    }   
 }
