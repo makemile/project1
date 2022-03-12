@@ -1,33 +1,46 @@
-@include media-md{
-    form{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem; 
-    }
-   input{
+@include media-md {
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  input {
     width: 50%;
-   }
-
-   .icon-check{
-    position: absolute;
-   
-    z-index: 100;
-    font-size: 16px;
-   
-    left: 215px;
-    top: 15px;
-
-   }
-
+  }
+  .terminos {
+    &__label {
+      gap: 0.5rem;
+    }
+    &__input {
+      height: 20px;
+      width: 1.5%;
+    }
+  }
 }
 
-@include media-lg{
-    form{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem; 
-    }
-   input{
+@include media-lg {
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  input {
     width: 50%;
-   }
+  }
+
+  .terminos {
+    grid-column: span 2;
+    &__label {
+      gap: 0.5rem;
+    }
+    &__input {
+      height: 20px;
+      width: 1.5%;
+    }
+  }
+
+  .container-btn {
+    display: flex;
+    grid-column: span 2;
+  }
 }

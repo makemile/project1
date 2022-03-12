@@ -1,26 +1,26 @@
-import "./sass/main.scss"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser, faCircleCheck, faExclamationTriangle} from '@fortawesome/free-solid-svg-icons'
+import "./sass/main.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faCircleCheck,
+  faExclamationTriangle,
+} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
     <main>
-     
       <form action="">
         <div className="input">
-        
-        <label htmlFor="">Usuario</label>
-        <div className="input__user">
-        <FontAwesomeIcon className="icon-first" icon={faUser} />
-        <input type="text" placeholder="usuario"/>
-        <FontAwesomeIcon className="icon-check" icon={faCircleCheck}/>
-        
+          <label htmlFor="">Usuario</label>
+          <div className="input__user">
+            <FontAwesomeIcon className="icon-first" icon={faUser} />
+            <input type="text" placeholder="usuario" />
+            <FontAwesomeIcon className="icon-check" icon={faCircleCheck} />
+          </div>
+
+          <p>lorem</p>
         </div>
 
-        <p>lorem</p>
-        
-        </div>
-        
         {/* <div>
         <label htmlFor="">Nombre</label>
         <div>
@@ -66,29 +66,32 @@ function App() {
        
           <p>lorem</p>
         </div>  */}
-        
-        <div>
-          <label>
-            <input type="checkbox" name="terminos" id="terminos"></input>
+
+        <div className="terminos">
+          <label className="terminos__label">
+            <input
+              className="terminos__input"
+              type="checkbox"
+              name="terminos"
+              id="terminos"
+            ></input>
             Acepto los terminos y condiciones
           </label>
-
-      </div> 
-      <div className="terminos">
-        <p>
-          <FontAwesomeIcon icon={faExclamationTriangle}/>
-          <b>Error:</b> Por favor rellene los campos obligatorios
-        </p>
-      </div>
-      <div  className="container-btn">
-        <button className="container-btn__submit" type="submit">
-          Enviar
-        </button>
-        <p>formulario enviado con exito</p>
-      </div>
-      </form>    
+        </div>
+        <div>
+          <p>
+            <FontAwesomeIcon icon={faExclamationTriangle} />
+            <b>Error:</b> Por favor rellene los campos obligatorios
+          </p>
+        </div>
+        <div className="container-btn">
+          <button className="container-btn__submit" type="submit">
+            Enviar
+          </button>
+          <p>formulario enviado con exito</p>
+        </div>
+      </form>
     </main>
-    
   );
 }
 
