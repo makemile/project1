@@ -1,71 +1,39 @@
 import "./sass/main.scss";
+import Inputs from "./components/Input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
-  faCircleCheck,
+    faCircleCheck,
   faExclamationTriangle,
+  faLock
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
     <main>
       <form action="">
-        <div className="input">
-          <label htmlFor="">Usuario</label>
-          <div className="input__user">
-            <FontAwesomeIcon className="icon-first" icon={faUser} />
-            <input type="text" placeholder="usuario" />
-            <FontAwesomeIcon className="icon-check" icon={faCircleCheck} />
-          </div>
+      
+        <Inputs
+        icon = {faUser}
+        type = "text"
+        label="Usuario"
+        placeholder="Carla123"
+        name="usuario"
+        error = "Nombre del usuario no mennor de 4 caracteres y no mayor a 14 caracteres, solo puede contener, numeros, letras y guion bajo"
+        regex = {faCircleCheck}
+        />
 
-          <p>lorem</p>
-        </div>
+        <Inputs 
+        icon = {faLock}
+        type = "number"
+        label = "Contraseña"
+        placeholder = "******"
+        name="contraseña"
+        error = ""
+        regex={faCircleCheck}
+        />
+        
 
-        {/* <div>
-        <label htmlFor="">Nombre</label>
-        <div>
-        <input type="text" placeholder="Nombre"/>
-        </div>
-          
-          <p>lorem</p>
-        </div>
-        {/*---------*/}
-        {/* <div>
-        <label htmlFor="">Contraseña</label>
-        <div>
-        <input type="text" placeholder="Contraseña"/>
-        </div>
-         
-          
-          <p>lorem</p>
-        </div>
-        {/*-----------*/}
-        {/* <div>
-        <label htmlFor="">Repetir contraseña</label>
-        <div>
-        <input type="text" placeholder="contraseña"/>
-        </div>
-
-          <p>lorem</p>
-        </div> */}
-        {/*-----------*/}
-        {/* <div>
-        <label htmlFor="">correo electronico</label>
-        <div>
-        <input type="text" placeholder="email"/>
-        </div>
-          
-          <p>lorem</p>
-        </div> */}
-        {/*----------*/}
-        {/* <div>
-        <label htmlFor="">telefono</label>
-        <div>
-        <input type="tel"  placeholder="número telefono"/>
-        </div>
-       
-          <p>lorem</p>
-        </div>  */}
 
         <div className="terminos">
           <label className="terminos__label">
@@ -78,21 +46,23 @@ function App() {
             Acepto los terminos y condiciones
           </label>
         </div>
-        <div>
-          <p>
+       { false && <div className="container-error">
+          <p className="container-error__error">
             <FontAwesomeIcon icon={faExclamationTriangle} />
             <b>Error:</b> Por favor rellene los campos obligatorios
           </p>
-        </div>
+        </div>}
         <div className="container-btn">
           <button className="container-btn__submit" type="submit">
             Enviar
           </button>
-          <p>formulario enviado con exito</p>
+          <p className="container-btn__msmexito">formulario enviado con exito</p>
         </div>
       </form>
     </main>
   );
+
+  
 }
 
 export default App;

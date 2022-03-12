@@ -1,6 +1,6 @@
 @import "./config";
 @import "./responsive";
-@import "./_form.scss";
+@import "./form";
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -9,7 +9,6 @@ body {
 }
 
 main {
-  width: 100%;
   margin: auto;
   max-width: 800px;
   padding: 40px;
@@ -19,5 +18,5 @@ p {
   font-size: 12px;
   margin: 0px;
   color: $secondary-color;
-  // display: none;
+  display: none;
 }

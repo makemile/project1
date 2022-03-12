@@ -1,4 +1,7 @@
 @include media-md {
+    main{
+        width: 80%;
+    }
   form {
     display: grid;
     grid-template-columns: 1fr;
@@ -16,9 +19,21 @@
       width: 1.5%;
     }
   }
+
+  .container-error{
+    grid-column: span 1;
+    height: 45px;
+    line-height: 45px;
+    padding: 0px 15px;
+    border-radius: 3px;
+    background: $secondary-color;
+  }
 }
 
 @include media-lg {
+    main{
+        width: 100%;
+    }
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -42,5 +57,14 @@
   .container-btn {
     display: flex;
     grid-column: span 2;
+  }
+
+  .container-error{
+    grid-column: span 2;
+    height: 45px;
+    line-height: 45px;
+    padding: 0px 15px;
+    border-radius: 3px;
+    background: $secondary-color;
   }
 }
