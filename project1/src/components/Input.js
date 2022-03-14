@@ -13,20 +13,34 @@ const Inputs = (props) => {
     name,
     error,
     succes,
-    icon,
+    iconUser,
+    iconLock,
     iconMark,
     iconCheck,
     regexInput,
+    iconPhone,
+    iconEmail,
+    validatePassW
   } = props;
-  console.log(state);
+
   const onChange = (e) => {
     updateState({ ...state, empty: e.target.value });
   };
-
-  const validation = () =>
-    regexInput.test(state.empty)
-      ? updateState({ ...state, validate: "true" })
-      : updateState({ ...state, validate: "false" });
+ 
+  const validation = () => {
+      if(regexInput){
+        regexInput.test(state.empty)
+        ? updateState({ ...state, validate: "true" })
+        : updateState({ ...state, validate: "false" });
+        
+      }
+     if( validatePassW) {
+         validatePassW()
+         
+     }
+  }
+   
+  
 
   return (
     <div className="form-input">
@@ -34,7 +48,10 @@ const Inputs = (props) => {
         {label}
       </label>
       <div className="form-input__user">
-        <FontAwesomeIcon className="icon-first" icon={icon} />
+        <FontAwesomeIcon className="icon-first" icon={iconUser} />
+        <FontAwesomeIcon className="icon-lock" icon={iconLock} />
+        <FontAwesomeIcon className="icon-phone" icon={iconPhone} />
+        <FontAwesomeIcon className="icon-email" icon={iconEmail} />
         <input
           type={type}
           placeholder={placeholder}
@@ -44,12 +61,14 @@ const Inputs = (props) => {
           onKeyUp={validation}
           onBlur={validation}
           validate={state.validate}
+
         />
         {state.validate === "true" ? (
           <FontAwesomeIcon className="icon-check" icon={iconCheck} />
         ) : (
           <FontAwesomeIcon className="icon-mark" icon={iconMark} />
-        )}
+        )
+        }
       </div>
       {state.validate === "true" ? <p>{succes}</p> : <p>{error}</p>}
     </div>

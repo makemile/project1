@@ -49,12 +49,20 @@ label {
 }
 
 .icon-first {
-  position: absolute;
-  top: 9px;
-  padding: 5px;
-  color: $icon-color;
-  left: 5px;
+ @include iconinitial;
 }
+
+.icon-lock{
+@include iconinitial;
+}
+
+.icon-phone{
+@include iconinitial;
+}
+
+.icon-email{
+    @include iconinitial;
+    }
 
 .icon-check {
   @include iconValidate($color: green);

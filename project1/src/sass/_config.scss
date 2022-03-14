@@ -10,6 +10,14 @@ $icon-color: #bdbdbd;
   padding: 0;
 }
 
+@mixin iconinitial {
+  position: absolute;
+  top: 9px;
+  padding: 5px;
+  color: $icon-color;
+  left: 5px;
+    
+}
 @mixin iconValidate($color) {
   position: absolute;
   z-index: 100;
