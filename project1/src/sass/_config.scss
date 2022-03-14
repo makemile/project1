@@ -1,10 +1,23 @@
-$primary-color: blue;
-$secondary-color: red;
+$border-primary: blue;
+$border-secondary: red;
+$primary-color: red;
+$textwarning: #000;
+$icon-color: #bdbdbd;
 
 * {
   margin: 0;
   box-sizing: 0;
   padding: 0;
+}
+
+@mixin iconValidate($color) {
+  position: absolute;
+  z-index: 100;
+  font-size: 16px;
+  left: 215px;
+  top: 15px;
+  opacity: 1;
+  color: $color;
 }
 
 @mixin transition-ease {

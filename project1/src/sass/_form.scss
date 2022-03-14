@@ -1,20 +1,19 @@
+$validation: validate;
+
 form {
   line-height: 2;
 }
-label {
-  font-weight: 700;
-  padding: 10px;
-  min-height: 40px;
-  display: block;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
+
+form input:invalid {
+  border: 2px solid red;
 }
 
-.input__user {
-  position: relative;
-  z-index: 90;
+form label:invalid {
+  color: red;
+}
+
+form input:valid {
+  border: 2px solid green;
 }
 
 input {
@@ -27,33 +26,42 @@ input {
   @include transition-ease;
 
   &:focus {
-    border: 3px solid $primary-color;
+    border: 3px solid $border-primary;
     outline: none;
     box-shadow: 3px 0px 30px rgb(163, 163, 163, 0.4);
   }
+}
+
+label {
+  font-weight: 700;
+  padding: 10px;
+  min-height: 40px;
+  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.form-input__user {
+  position: relative;
+  z-index: 90;
 }
 
 .icon-first {
   position: absolute;
   top: 9px;
   padding: 5px;
-  color: #bdbdbd;
+  color: $icon-color;
   left: 5px;
-  // // bottom: 14px;
-  // // z-index: 100;
-  // // font-size: 16px;
-  
 }
 
 .icon-check {
-  position: absolute;
+  @include iconValidate($color: green);
+}
 
-  z-index: 100;
-  font-size: 16px;
-
-  left: 215px;
-  top: 15px;
-  opacity: 0;
+.icon-mark {
+  @include iconValidate($color: red);
 }
 
 .container-btn {
@@ -62,17 +70,17 @@ input {
   align-items: center;
   grid-column: span 1;
   margin-top: 1rem;
-  &__msmexito{
-      font-size: 14px;
-      color: aqua;
-      display: none;
+  &__msmexito {
+    font-size: 14px;
+    color: aqua;
+    display: none;
   }
   &__submit {
     height: 30px;
     line-height: 30px;
     width: 20%;
     background: #bdbdbd;
-    color: black;
+    color: $textwarning;
     font-weight: bold;
     border: none;
     border-radius: 3px;
@@ -84,20 +92,19 @@ input {
   }
 }
 
-.container-error{
-    grid-column: span 2;
-    height: 45px;
-    line-height: 45px;
-    padding: 0px 15px;
-    border-radius: 3px;
-    background: $secondary-color;
-    
-    &__error{
-        margin: 0px;
-        color: black; 
-    }
-    b{
-        margin-left: 10px;
-            
-    }
+.container-error {
+  grid-column: span 2;
+  height: 45px;
+  line-height: 45px;
+  padding: 0px 15px;
+  border-radius: 3px;
+  background: $primary-color;
+
+  &__error {
+    margin: 0px;
+    color: $textwarning;
+  }
+  b {
+    margin-left: 10px;
+  }
 }

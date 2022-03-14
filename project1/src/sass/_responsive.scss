@@ -1,7 +1,7 @@
 @include media-md {
-    main{
-        width: 80%;
-    }
+  main {
+    width: 80%;
+  }
   form {
     display: grid;
     grid-template-columns: 1fr;
@@ -20,20 +20,20 @@
     }
   }
 
-  .container-error{
+  .container-error {
     grid-column: span 1;
     height: 45px;
     line-height: 45px;
     padding: 0px 15px;
     border-radius: 3px;
-    background: $secondary-color;
+    background: $primary-color;
   }
 }
 
 @include media-lg {
-    main{
-        width: 100%;
-    }
+  main {
+    width: 100%;
+  }
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -59,12 +59,12 @@
     grid-column: span 2;
   }
 
-  .container-error{
+  .container-error {
     grid-column: span 2;
     height: 45px;
     line-height: 45px;
     padding: 0px 15px;
     border-radius: 3px;
-    background: $secondary-color;
+    background: $primary-color;
   }
 }
