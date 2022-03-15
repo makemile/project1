@@ -10,6 +10,7 @@
   input {
     width: 50%;
   }
+
   .terminos {
     &__label {
       gap: 0.5rem;
@@ -39,8 +40,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
+
+  .form-container {
+    display: contents;
+  }
   input {
-    width: 50%;
+    width: 42%;
   }
 
   .terminos {

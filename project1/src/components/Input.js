@@ -1,4 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Inputs = (props) => {
   const {
@@ -15,32 +19,26 @@ const Inputs = (props) => {
     succes,
     iconUser,
     iconLock,
-    iconMark,
-    iconCheck,
     regexInput,
     iconPhone,
     iconEmail,
-    validatePassW
+    validatePassW,
   } = props;
 
   const onChange = (e) => {
     updateState({ ...state, empty: e.target.value });
   };
- 
+
   const validation = () => {
-      if(regexInput){
-        regexInput.test(state.empty)
+    if (regexInput) {
+      regexInput.test(state.empty)
         ? updateState({ ...state, validate: "true" })
         : updateState({ ...state, validate: "false" });
-        
-      }
-     if( validatePassW) {
-         validatePassW()
-         
-     }
-  }
-   
-  
+    }
+    if (validatePassW) {
+      validatePassW();
+    }
+  };
 
   return (
     <div className="form-input">
@@ -61,14 +59,12 @@ const Inputs = (props) => {
           onKeyUp={validation}
           onBlur={validation}
           validate={state.validate}
-
         />
         {state.validate === "true" ? (
-          <FontAwesomeIcon className="icon-check" icon={iconCheck} />
+          <FontAwesomeIcon className="icon-check" icon={faCircleCheck} />
         ) : (
-          <FontAwesomeIcon className="icon-mark" icon={iconMark} />
-        )
-        }
+          <FontAwesomeIcon className="icon-mark" icon={faCircleXmark} />
+        )}
       </div>
       {state.validate === "true" ? <p>{succes}</p> : <p>{error}</p>}
     </div>

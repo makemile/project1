@@ -15,8 +15,10 @@ main {
 }
 
 p {
-  font-size: 12px;
+  font-size: 11px;
   margin: 0px;
   color: $primary-color;
   opacity: 1;
+  width: auto;
+  display: block;
 }
