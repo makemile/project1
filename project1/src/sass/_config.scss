@@ -1,10 +1,54 @@
 
+$border-primary: blue;
+$border-secondary: red;
+$primary-color: red;
+$textwarning: #000;
+$icon-color: #bdbdbd;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-    background: grey;
+* {
+  margin: 0;
+  box-sizing: 0;
+  padding: 0;
 }
+
+@mixin iconinitial {
+  position: absolute;
+  top: 9px;
+  padding: 5px;
+  color: $icon-color;
+  left: 5px;
+}
+@mixin iconValidate($color) {
+  position: absolute;
+  z-index: 100;
+  font-size: 16px;
+  left: 215px;
+  top: 15px;
+  opacity: 1;
+  color: $color;
+}
+
+@mixin transition-ease {
+  transition: 0.3s ease all;
+}
+
+@mixin media-md {
+  @media screen and(min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and(min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and(min-width: 1600px) {
+    @content;
+  }
+}
+
 
 
