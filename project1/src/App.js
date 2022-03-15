@@ -1,3 +1,4 @@
+
 import "./sass/main.scss";
 import React, { useState } from "react";
 import Input from "./components/Input";
@@ -11,6 +12,7 @@ import {
   faPhone,
   faAt,
 } from "@fortawesome/free-solid-svg-icons";
+
 
 function App() {
   const [user, updateUser] = useState({ empty: "", validate: null });
@@ -73,6 +75,7 @@ function App() {
   };
 
   return (
+
     <main>
       <form action="" onSubmit={onSubmit}>
         <div className="form-container">
@@ -194,6 +197,7 @@ function App() {
         </div>
       </form>
     </main>
+
   );
 }
 
